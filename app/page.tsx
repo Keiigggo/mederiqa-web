@@ -73,7 +73,17 @@ function BrandSymbol({ className = "" }: { className?: string }) {
         <circle cx="86" cy="121" r="9" />
         <circle cx="19" cy="142" r="10" />
         <circle cx="101" cy="142" r="10" />
-        <path d="M38 67a10 10 0 0 1 18-6l4 6 4-6a10 10 0 1 1 16 12l-9 7v8a11 11 0 0 1-22 0v-8l-9-7a10 10 0 0 1-2-6Z" />
+        <path
+          d="M42 65 60 88 78 65"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="13"
+        />
+        <circle cx="42" cy="65" r="9.5" />
+        <circle cx="78" cy="65" r="9.5" />
+        <circle cx="60" cy="88" r="11" />
       </g>
     </svg>
   );
@@ -172,9 +182,10 @@ export default function Home() {
         </div>
         <div className="about-layout">
           <p className="about-lead">
-            医療に、問いを立て、
-            <br />
-            知性で<em>最適解</em>を導く。
+            <span>医療に、問いを立て、</span>
+            <span>
+              知性で<em>最適解</em>を導く。
+            </span>
           </p>
           <div className="about-body">
             <p>

@@ -472,8 +472,8 @@ main {
 
 .about-layout {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(50px, 9vw, 150px);
+  grid-template-columns: 1fr;
+  gap: 70px;
   padding: 112px 6vw 94px;
 }
 
@@ -485,13 +485,19 @@ main {
   line-height: 1.55;
 }
 
+.about-lead span {
+  display: block;
+  white-space: nowrap;
+}
+
 .about-lead em {
   font-style: normal;
   font-weight: 300;
 }
 
 .about-body {
-  align-self: end;
+  width: min(100%, 760px);
+  justify-self: end;
 }
 
 .about-body p {
@@ -941,15 +947,6 @@ footer {
     bottom: 34px;
   }
 
-  .about-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .about-body {
-    max-width: 650px;
-    margin-left: auto;
-  }
-
   .manifesto {
     grid-template-columns: 0.7fr 1.3fr;
   }
@@ -1069,7 +1066,12 @@ footer {
   }
 
   .about-lead {
-    font-size: 30px;
+    font-size: 28px;
+  }
+
+  .about-lead span {
+    overflow-wrap: anywhere;
+    white-space: normal;
   }
 
   .about-body p {
