@@ -29,27 +29,6 @@ const services = [
   },
 ];
 
-const principles = [
-  {
-    number: "01",
-    english: "Observe",
-    japanese: "現場を知る",
-    body: "医療現場の声とデータを丁寧に観察し、本当に解くべき課題を見つけます。",
-  },
-  {
-    number: "02",
-    english: "Structure",
-    japanese: "構造を捉える",
-    body: "複雑な医療の営みを、AIと数理の力で扱える構造へ変換します。",
-  },
-  {
-    number: "03",
-    english: "Improve",
-    japanese: "より良くする",
-    body: "正しさだけでなく、現場に根づき、使われ続けることまでを設計します。",
-  },
-];
-
 const medenoaDots = [
   { cx: 338.9, cy: 269.8, r: 49, orbit: "outer" },
   { cx: 914.6, cy: 269.8, r: 49, orbit: "outer" },
@@ -177,7 +156,6 @@ export default function Home() {
         <nav aria-label="メインナビゲーション">
           <a href="#about">About</a>
           <a href="#services">Services</a>
-          <a href="#approach">Approach</a>
         </nav>
         <a className="header-contact" href="#contact">
           Contact
@@ -227,10 +205,8 @@ export default function Home() {
         </div>
         <div className="about-layout">
           <p className="about-lead">
-            <span>医療に、問いを立て、</span>
-            <span>
-              知性で<em>最適解</em>を導く。
-            </span>
+            <span>医療に問を</span>
+            <span>知性で解を</span>
           </p>
           <div className="about-body">
             <p>
@@ -294,42 +270,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="approach section" id="approach">
-        <div className="section-heading section-heading--light">
-          <span className="section-number">03</span>
-          <h2>Approach</h2>
-          <span className="section-jp">私たちの思考法</span>
-        </div>
-        <div className="approach-intro">
-          <p>
-            Better decisions,
-            <br />
-            by design<span>.</span>
-          </p>
-          <p>
-            問いを立て、構造を捉え、
-            <br />
-            現場で使われる最適解へ。
-          </p>
-        </div>
-        <div className="principle-list">
-          {principles.map((principle) => (
-            <article className="principle" key={principle.number}>
-              <span className="principle-number">{principle.number}</span>
-              <div className="principle-title">
-                <h3>{principle.english}</h3>
-                <span>{principle.japanese}</span>
-              </div>
-              <p>{principle.body}</p>
-              <span className="principle-node" aria-hidden="true" />
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="contact" id="contact">
         <div className="contact-top">
-          <span className="section-number">04</span>
+          <span className="section-number">03</span>
           <span>Contact</span>
           <span className="section-jp">お問い合わせ</span>
         </div>

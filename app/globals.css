@@ -603,11 +603,6 @@ main {
   white-space: nowrap;
 }
 
-.about-lead em {
-  font-style: normal;
-  font-weight: 300;
-}
-
 .about-body {
   width: min(100%, 760px);
   justify-self: end;
@@ -854,99 +849,6 @@ main {
   box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.09);
 }
 
-.approach {
-  background: var(--ink);
-  color: var(--white);
-}
-
-.section-heading--light {
-  border-color: rgba(255, 255, 255, 0.18);
-}
-
-.section-heading--light .section-jp {
-  color: #929495;
-}
-
-.approach-intro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: end;
-  padding: 90px 0 70px;
-}
-
-.approach-intro > p:first-child {
-  margin: 0;
-  font-family: "Plus Jakarta Sans Variable", sans-serif;
-  font-size: clamp(43px, 6vw, 90px);
-  font-weight: 420;
-  letter-spacing: -0.065em;
-  line-height: 0.98;
-}
-
-.approach-intro > p:first-child span {
-  color: var(--silver);
-}
-
-.approach-intro > p:last-child {
-  justify-self: end;
-  margin: 0;
-  color: #a4a5a6;
-  font-size: 14px;
-  line-height: 2;
-}
-
-.principle-list {
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.principle {
-  display: grid;
-  min-height: 160px;
-  grid-template-columns: 80px 1fr 1fr 30px;
-  align-items: center;
-  gap: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.principle-number {
-  color: #77797a;
-  font-family: "Plus Jakarta Sans Variable", sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-}
-
-.principle-title h3 {
-  margin: 0;
-  font-family: "Plus Jakarta Sans Variable", sans-serif;
-  font-size: clamp(28px, 3vw, 45px);
-  font-weight: 450;
-  letter-spacing: -0.045em;
-}
-
-.principle-title span {
-  display: block;
-  margin-top: 7px;
-  color: #8d8f90;
-  font-size: 11px;
-}
-
-.principle > p {
-  max-width: 480px;
-  margin: 0;
-  color: #a9aaab;
-  font-size: 13px;
-  line-height: 1.85;
-}
-
-.principle-node {
-  width: 9px;
-  height: 9px;
-  justify-self: end;
-  border-radius: 50%;
-  background: var(--white);
-  box-shadow: 0 0 0 9px rgba(255, 255, 255, 0.07);
-}
-
 .contact {
   padding: 96px var(--page-pad) 38px;
   background: var(--white);
@@ -1069,9 +971,6 @@ footer {
     grid-template-columns: 0.7fr 1.3fr;
   }
 
-  .principle {
-    grid-template-columns: 55px 0.8fr 1fr 20px;
-  }
 }
 
 @media (max-width: 720px) {
@@ -1255,43 +1154,6 @@ footer {
 
   .service-card h3 {
     font-size: 30px;
-  }
-
-  .approach-intro {
-    grid-template-columns: 1fr;
-    gap: 44px;
-    padding: 65px 0 55px;
-  }
-
-  .approach-intro > p:first-child {
-    font-size: 50px;
-  }
-
-  .approach-intro > p:last-child {
-    justify-self: start;
-  }
-
-  .principle {
-    min-height: auto;
-    grid-template-columns: 35px 1fr 12px;
-    gap: 12px;
-    padding: 30px 0;
-  }
-
-  .principle-title h3 {
-    font-size: 29px;
-  }
-
-  .principle > p {
-    grid-column: 2 / 4;
-    font-size: 12px;
-  }
-
-  .principle-node {
-    width: 7px;
-    height: 7px;
-    grid-column: 3;
-    grid-row: 1;
   }
 
   .contact {
