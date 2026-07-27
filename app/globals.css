@@ -68,10 +68,6 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 11px;
-  font-family: "Plus Jakarta Sans Variable", sans-serif;
-  font-size: 20px;
-  font-weight: 650;
-  letter-spacing: -0.04em;
 }
 
 .brand__symbol {
@@ -81,12 +77,39 @@ main {
   color: var(--ink);
 }
 
+.brand__name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  line-height: 1;
+}
+
+.brand__name-ja {
+  font-family: "Noto Sans JP Variable", sans-serif;
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -0.05em;
+}
+
+.brand__name-en {
+  color: var(--muted);
+  font-family: "Plus Jakarta Sans Variable", sans-serif;
+  font-size: 7px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+}
+
 .brand--light {
   color: var(--white);
 }
 
 .brand--light .brand__symbol {
   color: var(--white);
+}
+
+.brand--light .brand__name-en {
+  color: rgba(255, 255, 255, 0.58);
 }
 
 .site-header nav {
@@ -978,8 +1001,12 @@ footer {
     height: 76px;
   }
 
-  .brand {
-    font-size: 18px;
+  .brand__name-ja {
+    font-size: 15px;
+  }
+
+  .brand__name-en {
+    font-size: 6px;
   }
 
   .brand__symbol {

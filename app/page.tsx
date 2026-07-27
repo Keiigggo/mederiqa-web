@@ -4,30 +4,30 @@ const services = [
   {
     number: "01",
     title: "Healthcare AI",
-    japanese: "医療AI",
+    japanese: "医療AI開発",
     description:
-      "現場の文脈を理解し、日々の判断に静かに寄り添うAIを設計します。",
+      "現場の知見を起点に、診療や業務の意思決定を支えるAIを設計します。",
   },
   {
     number: "02",
     title: "Hospital Operations Optimization",
-    japanese: "病院オペレーション最適化",
+    japanese: "病院運営支援",
     description:
-      "病床・人員・時間の制約を数理で捉え、病院全体の流れを整えます。",
+      "病床・人員・時間に関する情報を可視化し、よりよい運用の選択肢を現場とともにつくります。",
   },
   {
     number: "03",
     title: "Clinical Workflow Automation",
-    japanese: "医療ワークフロー自動化",
+    japanese: "医療ワークフロー支援",
     description:
-      "分断された業務をつなぎ、医療者が本来向き合うべき仕事に時間を戻します。",
+      "現場で培われてきた業務を尊重しながら、情報連携や定型作業を支援し、負担軽減につなげます。",
   },
   {
     number: "04",
     title: "LLM Applications",
-    japanese: "大規模言語モデル活用",
+    japanese: "生成AI・LLM活用",
     description:
-      "医療の専門知と生成AIを、安全で実用的なプロダクトへ落とし込みます。",
+      "医療の専門知と運用要件を踏まえ、現場で検証を重ねながら生成AIの実用化を支援します。",
   },
 ];
 
@@ -145,7 +145,10 @@ function Brand({ light = false }: { light?: boolean }) {
   return (
     <span className={`brand${light ? " brand--light" : ""}`}>
       <BrandSymbol className="brand__symbol" />
-      <span>Medenoa</span>
+      <span className="brand__name">
+        <span className="brand__name-ja">メデノア</span>
+        <span className="brand__name-en">Medenoa</span>
+      </span>
     </span>
   );
 }
@@ -184,7 +187,7 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <a href="#top" className="logo-link" aria-label="Medenoa ホーム">
+        <a href="#top" className="logo-link" aria-label="メデノア ホーム">
           <Brand />
         </a>
         <nav aria-label="メインナビゲーション">
@@ -211,7 +214,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="hero-description">
-            Medenoaは、テクノロジーの力で医療の未来を切り拓き、
+            メデノアは、テクノロジーの力で医療の未来を切り拓き、
             <br />
             すべての人により良い選択肢を届けます。
           </p>
@@ -245,7 +248,7 @@ export default function Home() {
           </p>
           <div className="about-body">
             <p>
-              Medenoaは、AI・数理最適化・大規模言語モデルを活用し、
+              メデノアは、AI・数理最適化・大規模言語モデルを活用し、
               医療現場の意思決定を支援するソフトウェアを開発しています。
             </p>
             <p>
@@ -307,12 +310,12 @@ export default function Home() {
           </a>
         </div>
         <footer>
-          <Brand light />
+          <Brand />
           <div className="footer-statement">
             <span>Built in Japan.</span>
             <span>Designed for Healthcare.</span>
           </div>
-          <span className="copyright">© 2026 Medenoa</span>
+          <span className="copyright">© 2026 メデノア / Medenoa</span>
         </footer>
       </section>
     </main>
