@@ -25,12 +25,12 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     siteName: "Medenoa",
     title: "Medenoa — Healthcare Intelligence",
-    description: "人とAI・テクノロジーをつなぎ、医療の可能性を無限に拡張する。",
+    description: "人とAI・テクノロジーをつなぎ、医療の可能性をひろげます。",
   },
   twitter: {
     card: "summary_large_image",
     title: "Medenoa — Healthcare Intelligence",
-    description: "人とAI・テクノロジーをつなぎ、医療の可能性を無限に拡張する。",
+    description: "人とAI・テクノロジーをつなぎ、医療の可能性をひろげます。",
   },
   icons: {
     icon: "/favicon.svg",
