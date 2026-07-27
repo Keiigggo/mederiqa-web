@@ -55,14 +55,16 @@ function LogoGeometry({ animated = false }: { animated?: boolean }) {
   return (
     <>
       {["outer", "mid", "micro"].map((orbit) => (
-        <g
-          className={animated ? `hero-logo-dots hero-logo-dots--${orbit}` : undefined}
-          key={orbit}
-        >
+        <g key={orbit}>
           {medenoaDots
             .filter((dot) => dot.orbit === orbit)
-            .map((dot) => (
+            .map((dot, dotIndex) => (
               <circle
+                className={
+                  animated
+                    ? `hero-logo-dot hero-logo-dot--${dotIndex % 2 === 0 ? "clockwise" : "counterclockwise"}`
+                    : undefined
+                }
                 cx={dot.cx}
                 cy={dot.cy}
                 r={dot.r}

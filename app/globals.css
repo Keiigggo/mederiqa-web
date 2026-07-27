@@ -276,7 +276,7 @@ main {
 
 .hero-orbit--outer {
   inset: 2%;
-  animation: orbit-spin 26s linear infinite;
+  animation: orbit-spin 42s linear infinite;
 }
 
 .hero-orbit--outer::before {
@@ -292,7 +292,7 @@ main {
 .hero-orbit--inner {
   inset: 14%;
   border-style: dashed;
-  animation: orbit-spin 20s linear infinite reverse;
+  animation: orbit-spin 34s linear infinite reverse;
 }
 
 .hero-orbit--inner::before {
@@ -345,76 +345,25 @@ main {
   width: 42%;
   height: auto;
   aspect-ratio: 685 / 751;
+  overflow: visible;
   color: var(--white);
   filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.25));
 }
 
-.hero-logo-dots {
+.hero-logo-dot {
   transform-box: view-box;
-  transform-origin: center;
+  transform-origin: 50% 50%;
   will-change: transform;
+  animation: logo-dot-orbit 46s linear infinite;
 }
 
-.hero-logo-dots--outer {
-  animation: logo-orbit-outer 18s linear infinite;
+.hero-logo-dot--counterclockwise {
+  animation-direction: reverse;
 }
 
-.hero-logo-dots--mid {
-  animation: logo-orbit-mid 18s linear infinite;
-}
-
-.hero-logo-dots--micro {
-  animation: logo-orbit-micro 18s linear infinite;
-}
-
-@keyframes logo-orbit-outer {
-  0%,
-  18% {
-    transform: rotate(0deg);
-  }
-  52% {
-    transform: rotate(300deg);
-  }
-  64%,
-  82% {
+@keyframes logo-dot-orbit {
+  to {
     transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(720deg);
-  }
-}
-
-@keyframes logo-orbit-mid {
-  0%,
-  18% {
-    transform: rotate(0deg);
-  }
-  52% {
-    transform: rotate(-300deg);
-  }
-  64%,
-  82% {
-    transform: rotate(-360deg);
-  }
-  100% {
-    transform: rotate(-720deg);
-  }
-}
-
-@keyframes logo-orbit-micro {
-  0%,
-  18% {
-    transform: rotate(0deg);
-  }
-  52% {
-    transform: rotate(600deg);
-  }
-  64%,
-  82% {
-    transform: rotate(720deg);
-  }
-  100% {
-    transform: rotate(1440deg);
   }
 }
 
@@ -1190,7 +1139,7 @@ footer {
 
   .hero-orbit,
   .hero-sphere,
-  .hero-logo-dots,
+  .hero-logo-dot,
   .visual-label,
   .visual-label::before {
     animation: none;
