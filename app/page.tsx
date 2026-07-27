@@ -52,20 +52,15 @@ const medenoaDots = [
 
 const medenoaCenter = { x: 627.5, y: 597 };
 
-const medenoaScatterPaths = medenoaDots.map((_, dotIndex) =>
+const medenoaScatterPaths = medenoaDots.map((dot, dotIndex) =>
   Array.from({ length: 4 }, (_, waypointIndex) => {
     const angleDegrees =
       (dotIndex * 137.508 +
-        waypointIndex * 91.7 +
-        dotIndex * waypointIndex * 17.3) %
+        waypointIndex * 83 +
+        dotIndex * waypointIndex * 11) %
       360;
     const angle = (angleDegrees * Math.PI) / 180;
-    const radius =
-      160 +
-      ((dotIndex * 193 +
-        waypointIndex * 271 +
-        dotIndex * waypointIndex * 31) %
-        520);
+    const radius = 790 - dot.r;
 
     return [
       Number((Math.cos(angle) * radius).toFixed(1)),
@@ -97,7 +92,11 @@ function LogoGeometry({ animated = false }: { animated?: boolean }) {
 
         return (
           <circle
-            className={animated ? "hero-logo-dot" : undefined}
+            className={
+              animated
+                ? `hero-logo-dot hero-logo-dot--timing-${dotIndex % 4}`
+                : undefined
+            }
             cx={dot.cx}
             cy={dot.cy}
             r={dot.r}
@@ -240,8 +239,7 @@ export default function Home() {
         </div>
         <div className="about-layout">
           <p className="about-lead">
-            <span>医療に問を</span>
-            <span>知性で解を</span>
+            <span>医療を起点に、技術をつくる。</span>
           </p>
           <div className="about-body">
             <p>
@@ -265,9 +263,6 @@ export default function Home() {
               <br />
               around <em>care.</em>
             </h2>
-            <p className="about-mission-translation">
-              医療を起点に、技術をかたちづくる。
-            </p>
             <p className="about-mission-note">
               人とテクノロジーの間に、信頼できる選択肢をつくる。
             </p>
