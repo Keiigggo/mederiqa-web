@@ -54,36 +54,29 @@ function BrandSymbol({ className = "" }: { className?: string }) {
   return (
     <svg
       className={className}
-      viewBox="0 0 120 150"
+      viewBox="0 0 685 751"
+      preserveAspectRatio="xMidYMid meet"
       role="img"
       aria-label="Medenoa symbol"
     >
       <g fill="currentColor">
-        <circle cx="19" cy="18" r="10" />
-        <circle cx="101" cy="18" r="10" />
-        <circle cx="34" cy="45" r="9" />
-        <circle cx="86" cy="45" r="9" />
-        <circle cx="18" cy="66" r="5.5" />
-        <circle cx="102" cy="66" r="5.5" />
-        <circle cx="18" cy="83" r="4.5" />
-        <circle cx="102" cy="83" r="4.5" />
-        <circle cx="18" cy="101" r="5.5" />
-        <circle cx="102" cy="101" r="5.5" />
-        <circle cx="34" cy="121" r="9" />
-        <circle cx="86" cy="121" r="9" />
-        <circle cx="19" cy="142" r="10" />
-        <circle cx="101" cy="142" r="10" />
-        <path
-          d="M42 65 60 88 78 65"
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="13"
-        />
-        <circle cx="42" cy="65" r="9.5" />
-        <circle cx="78" cy="65" r="9.5" />
-        <circle cx="60" cy="88" r="11" />
+        <circle cx="54" cy="49" r="49" />
+        <circle cx="630" cy="49" r="49" />
+        <circle cx="151" cy="187" r="46" />
+        <circle cx="532" cy="187" r="46" />
+        <circle cx="44" cy="279" r="26" />
+        <circle cx="640" cy="279" r="26" />
+        <circle cx="45" cy="388" r="22" />
+        <circle cx="638" cy="388" r="22" />
+        <circle cx="45" cy="499" r="26" />
+        <circle cx="639" cy="495" r="26" />
+        <circle cx="164" cy="445" r="44" />
+        <circle cx="520" cy="445" r="44" />
+        <circle cx="153" cy="576" r="44" />
+        <circle cx="530" cy="576" r="44" />
+        <circle cx="49" cy="701" r="50" />
+        <circle cx="635" cy="701" r="50" />
+        <path d="M237 266c28 0 50 22 50 50 0 32 23 59 55 59s55-27 55-59c0-28 22-50 50-50s50 22 50 50-22 50-50 50c-30 0-54 25-54 55v10c0 30-23 54-51 54s-52-24-52-54v-10c0-30-24-55-53-55-28 0-50-22-50-50s22-50 50-50Z" />
       </g>
     </svg>
   );
