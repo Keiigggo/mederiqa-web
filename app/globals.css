@@ -349,6 +349,75 @@ main {
   filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.25));
 }
 
+.hero-logo-dots {
+  transform-box: view-box;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.hero-logo-dots--outer {
+  animation: logo-orbit-outer 18s linear infinite;
+}
+
+.hero-logo-dots--mid {
+  animation: logo-orbit-mid 18s linear infinite;
+}
+
+.hero-logo-dots--micro {
+  animation: logo-orbit-micro 18s linear infinite;
+}
+
+@keyframes logo-orbit-outer {
+  0%,
+  18% {
+    transform: rotate(0deg);
+  }
+  52% {
+    transform: rotate(300deg);
+  }
+  64%,
+  82% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes logo-orbit-mid {
+  0%,
+  18% {
+    transform: rotate(0deg);
+  }
+  52% {
+    transform: rotate(-300deg);
+  }
+  64%,
+  82% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(-720deg);
+  }
+}
+
+@keyframes logo-orbit-micro {
+  0%,
+  18% {
+    transform: rotate(0deg);
+  }
+  52% {
+    transform: rotate(600deg);
+  }
+  64%,
+  82% {
+    transform: rotate(720deg);
+  }
+  100% {
+    transform: rotate(1440deg);
+  }
+}
+
 @keyframes sphere-float {
   50% {
     transform: translateY(-10px);
@@ -360,12 +429,18 @@ main {
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 7px 10px;
+  border: 1px solid rgba(8, 8, 8, 0.08);
+  border-radius: 999px;
+  background: rgba(244, 244, 241, 0.72);
+  backdrop-filter: blur(8px);
   color: var(--muted);
   font-family: "Plus Jakarta Sans Variable", sans-serif;
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  animation: label-sync 18s ease-in-out infinite;
 }
 
 .visual-label::before {
@@ -374,21 +449,57 @@ main {
   border-radius: 50%;
   background: var(--ink);
   content: "";
+  animation: label-node-sync 18s ease-in-out infinite;
+}
+
+.visual-label b {
+  color: var(--silver);
+  font-size: 7px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
 }
 
 .visual-label--one {
   top: 19%;
-  left: 3%;
+  left: 0;
 }
 
 .visual-label--two {
-  top: 14%;
-  right: 2%;
+  top: 13%;
+  right: 0;
 }
 
 .visual-label--three {
-  right: 3%;
-  bottom: 15%;
+  right: 0;
+  bottom: 14%;
+}
+
+@keyframes label-sync {
+  0%,
+  55%,
+  91%,
+  100% {
+    border-color: rgba(8, 8, 8, 0.08);
+    color: var(--muted);
+  }
+  64%,
+  82% {
+    border-color: rgba(8, 8, 8, 0.2);
+    color: var(--ink);
+  }
+}
+
+@keyframes label-node-sync {
+  0%,
+  55%,
+  91%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(8, 8, 8, 0);
+  }
+  64%,
+  82% {
+    box-shadow: 0 0 0 7px rgba(8, 8, 8, 0.07);
+  }
 }
 
 .hero-meta {
@@ -1216,7 +1327,10 @@ footer {
   }
 
   .hero-orbit,
-  .hero-sphere {
+  .hero-sphere,
+  .hero-logo-dots,
+  .visual-label,
+  .visual-label::before {
     animation: none;
   }
 

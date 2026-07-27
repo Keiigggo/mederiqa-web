@@ -50,33 +50,79 @@ const principles = [
   },
 ];
 
+const medenoaDots = [
+  { cx: 338.9, cy: 269.8, r: 49, orbit: "outer" },
+  { cx: 914.6, cy: 269.8, r: 49, orbit: "outer" },
+  { cx: 436.3, cy: 408.1, r: 45.5, orbit: "mid" },
+  { cx: 817.2, cy: 408.1, r: 45.5, orbit: "mid" },
+  { cx: 328.5, cy: 499.5, r: 25.5, orbit: "micro" },
+  { cx: 924.8, cy: 499.6, r: 25.5, orbit: "micro" },
+  { cx: 330.4, cy: 608.6, r: 21.8, orbit: "micro" },
+  { cx: 923.2, cy: 608.6, r: 21.8, orbit: "micro" },
+  { cx: 329.5, cy: 719.8, r: 25.5, orbit: "micro" },
+  { cx: 924.2, cy: 716.4, r: 25.5, orbit: "micro" },
+  { cx: 448.6, cy: 666, r: 43.5, orbit: "mid" },
+  { cx: 804.8, cy: 665.9, r: 43.5, orbit: "mid" },
+  { cx: 438.1, cy: 797.4, r: 44, orbit: "mid" },
+  { cx: 815.4, cy: 797.4, r: 44, orbit: "mid" },
+  { cx: 333.7, cy: 921.9, r: 49.5, orbit: "outer" },
+  { cx: 919.8, cy: 921.8, r: 49.5, orbit: "outer" },
+];
+
+const medenoaCorePath =
+  "M509.294 488.534C501.489 490.637 498.109 492.283 491.415 497.243C479.956 505.735 473.011 519.291 472.232 534.687C471.85 542.23 472.163 545.183 473.982 551.187C480.366 572.269 499.208 586.952 519.96 587.017C534.657 587.063 548.785 592.834 559.088 603C566.643 610.454 570.181 616.07 573.701 626.191C575.799 632.223 576.308 636.081 576.965 650.919C577.786 669.445 578.61 673.245 583.684 681.904C589.533 691.885 598.749 699.484 610.5 704.015C618.49 707.097 633.802 707.386 642 704.611C657.898 699.228 670.127 686.819 675.125 671C676.683 666.069 677.26 661.12 677.517 650.5C677.99 630.89 680.229 622.443 687.979 611.031C698.103 596.123 715.456 587.076 734.04 587.017C757.209 586.945 777.8 568.892 782.089 544.891C786.576 519.783 768.495 493.38 743.201 488.105C732.32 485.836 722.122 487.366 711.243 492.899C703.542 496.816 697.976 501.786 693.081 509.117C687.635 517.272 685.194 525.746 684.087 540.34C683.048 554.028 681.079 560.48 675.143 569.646C667.795 580.992 653.798 591.006 641 594.074C637.975 594.799 631.45 595.377 626.5 595.358C610.476 595.296 598.02 590.043 586.5 578.49C575.32 567.278 570 554.437 570 538.661C570 525.036 565.252 512.647 556.354 503.05C544.134 489.871 525.577 484.148 509.294 488.534Z";
+
+function LogoGeometry({ animated = false }: { animated?: boolean }) {
+  return (
+    <>
+      {["outer", "mid", "micro"].map((orbit) => (
+        <g
+          className={animated ? `hero-logo-dots hero-logo-dots--${orbit}` : undefined}
+          key={orbit}
+        >
+          {medenoaDots
+            .filter((dot) => dot.orbit === orbit)
+            .map((dot) => (
+              <circle
+                cx={dot.cx}
+                cy={dot.cy}
+                r={dot.r}
+                key={`${dot.cx}-${dot.cy}`}
+              />
+            ))}
+        </g>
+      ))}
+      <path d={medenoaCorePath} />
+    </>
+  );
+}
+
 function BrandSymbol({ className = "" }: { className?: string }) {
   return (
     <svg
       className={className}
-      viewBox="0 0 685 751"
+      viewBox="285 221 685 752"
       preserveAspectRatio="xMidYMid meet"
       role="img"
       aria-label="Medenoa symbol"
     >
       <g fill="currentColor">
-        <circle cx="54" cy="49" r="49" />
-        <circle cx="630" cy="49" r="49" />
-        <circle cx="151" cy="187" r="46" />
-        <circle cx="532" cy="187" r="46" />
-        <circle cx="44" cy="279" r="26" />
-        <circle cx="640" cy="279" r="26" />
-        <circle cx="45" cy="388" r="22" />
-        <circle cx="638" cy="388" r="22" />
-        <circle cx="45" cy="499" r="26" />
-        <circle cx="639" cy="495" r="26" />
-        <circle cx="164" cy="445" r="44" />
-        <circle cx="520" cy="445" r="44" />
-        <circle cx="153" cy="576" r="44" />
-        <circle cx="530" cy="576" r="44" />
-        <circle cx="49" cy="701" r="50" />
-        <circle cx="635" cy="701" r="50" />
-        <path d="M237 266c28 0 50 22 50 50 0 32 23 59 55 59s55-27 55-59c0-28 22-50 50-50s50 22 50 50-22 50-50 50c-30 0-54 25-54 55v10c0 30-23 54-51 54s-52-24-52-54v-10c0-30-24-55-53-55-28 0-50-22-50-50s22-50 50-50Z" />
+        <LogoGeometry />
+      </g>
+    </svg>
+  );
+}
+
+function AnimatedBrandSymbol() {
+  return (
+    <svg
+      className="hero-symbol"
+      viewBox="285 221 685 752"
+      preserveAspectRatio="xMidYMid meet"
+      aria-hidden="true"
+    >
+      <g fill="currentColor">
+        <LogoGeometry animated />
       </g>
     </svg>
   );
@@ -106,11 +152,17 @@ function HeroMark() {
       <div className="hero-orbit hero-orbit--inner" />
       <div className="hero-sphere">
         <span className="sphere-glow" />
-        <BrandSymbol className="hero-symbol" />
+        <AnimatedBrandSymbol />
       </div>
-      <span className="visual-label visual-label--one">Human</span>
-      <span className="visual-label visual-label--two">Intelligence</span>
-      <span className="visual-label visual-label--three">Healthcare</span>
+      <span className="visual-label visual-label--one">
+        <b>01</b> Human
+      </span>
+      <span className="visual-label visual-label--two">
+        <b>02</b> Intelligence
+      </span>
+      <span className="visual-label visual-label--three">
+        <b>03</b> Healthcare
+      </span>
     </div>
   );
 }
