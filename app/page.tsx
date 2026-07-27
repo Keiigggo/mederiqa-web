@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 const services = [
   {
     number: "01",
@@ -48,6 +50,30 @@ const medenoaDots = [
   { cx: 919.8, cy: 921.8, r: 49.5, orbit: "outer" },
 ];
 
+const medenoaCenter = { x: 627.5, y: 597 };
+
+const medenoaScatterPaths = medenoaDots.map((_, dotIndex) =>
+  Array.from({ length: 4 }, (_, waypointIndex) => {
+    const angleDegrees =
+      (dotIndex * 137.508 +
+        waypointIndex * 91.7 +
+        dotIndex * waypointIndex * 17.3) %
+      360;
+    const angle = (angleDegrees * Math.PI) / 180;
+    const radius =
+      160 +
+      ((dotIndex * 193 +
+        waypointIndex * 271 +
+        dotIndex * waypointIndex * 31) %
+        520);
+
+    return [
+      Number((Math.cos(angle) * radius).toFixed(1)),
+      Number((Math.sin(angle) * radius).toFixed(1)),
+    ] as const;
+  }),
+);
+
 const medenoaCorePath =
   "M509.294 488.534C501.489 490.637 498.109 492.283 491.415 497.243C479.956 505.735 473.011 519.291 472.232 534.687C471.85 542.23 472.163 545.183 473.982 551.187C480.366 572.269 499.208 586.952 519.96 587.017C534.657 587.063 548.785 592.834 559.088 603C566.643 610.454 570.181 616.07 573.701 626.191C575.799 632.223 576.308 636.081 576.965 650.919C577.786 669.445 578.61 673.245 583.684 681.904C589.533 691.885 598.749 699.484 610.5 704.015C618.49 707.097 633.802 707.386 642 704.611C657.898 699.228 670.127 686.819 675.125 671C676.683 666.069 677.26 661.12 677.517 650.5C677.99 630.89 680.229 622.443 687.979 611.031C698.103 596.123 715.456 587.076 734.04 587.017C757.209 586.945 777.8 568.892 782.089 544.891C786.576 519.783 768.495 493.38 743.201 488.105C732.32 485.836 722.122 487.366 711.243 492.899C703.542 496.816 697.976 501.786 693.081 509.117C687.635 517.272 685.194 525.746 684.087 540.34C683.048 554.028 681.079 560.48 675.143 569.646C667.795 580.992 653.798 591.006 641 594.074C637.975 594.799 631.45 595.377 626.5 595.358C610.476 595.296 598.02 590.043 586.5 578.49C575.32 567.278 570 554.437 570 538.661C570 525.036 565.252 512.647 556.354 503.05C544.134 489.871 525.577 484.148 509.294 488.534Z";
 
@@ -55,20 +81,28 @@ function LogoGeometry({ animated = false }: { animated?: boolean }) {
   return (
     <>
       {medenoaDots.map((dot, dotIndex) => {
-        const pairIndex = Math.floor(dotIndex / 2);
-        const isClockwise = (pairIndex + (dotIndex % 2)) % 2 === 0;
+        const scatterPath = medenoaScatterPaths[dotIndex];
+        const scatterStyle = animated
+          ? ({
+              "--scatter-x1": `${medenoaCenter.x + scatterPath[0][0] - dot.cx}px`,
+              "--scatter-y1": `${medenoaCenter.y + scatterPath[0][1] - dot.cy}px`,
+              "--scatter-x2": `${medenoaCenter.x + scatterPath[1][0] - dot.cx}px`,
+              "--scatter-y2": `${medenoaCenter.y + scatterPath[1][1] - dot.cy}px`,
+              "--scatter-x3": `${medenoaCenter.x + scatterPath[2][0] - dot.cx}px`,
+              "--scatter-y3": `${medenoaCenter.y + scatterPath[2][1] - dot.cy}px`,
+              "--scatter-x4": `${medenoaCenter.x + scatterPath[3][0] - dot.cx}px`,
+              "--scatter-y4": `${medenoaCenter.y + scatterPath[3][1] - dot.cy}px`,
+            } as CSSProperties)
+          : undefined;
 
         return (
           <circle
-            className={
-              animated
-                ? `hero-logo-dot hero-logo-dot--${isClockwise ? "clockwise" : "counterclockwise"} hero-logo-dot--motion-${dotIndex % 4}`
-                : undefined
-            }
+            className={animated ? "hero-logo-dot" : undefined}
             cx={dot.cx}
             cy={dot.cy}
             r={dot.r}
             key={`${dot.cx}-${dot.cy}`}
+            style={scatterStyle}
           />
         );
       })}

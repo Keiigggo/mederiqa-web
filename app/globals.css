@@ -351,31 +351,32 @@ main {
 }
 
 .hero-logo-dot {
-  transform-box: view-box;
-  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  transform-origin: center;
   will-change: transform;
-  animation: logo-dot-orbit 56s linear infinite;
+  animation: logo-particle-cycle 30s linear infinite;
 }
 
-.hero-logo-dot--counterclockwise {
-  animation-direction: reverse;
-}
-
-.hero-logo-dot--motion-1 {
-  animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-}
-
-.hero-logo-dot--motion-2 {
-  animation-timing-function: cubic-bezier(0.36, 0.02, 0.64, 0.98);
-}
-
-.hero-logo-dot--motion-3 {
-  animation-timing-function: cubic-bezier(0.48, 0.04, 0.52, 0.96);
-}
-
-@keyframes logo-dot-orbit {
-  to {
-    transform: rotate(360deg);
+@keyframes logo-particle-cycle {
+  0%,
+  34% {
+    transform: translate(0, 0);
+  }
+  41% {
+    transform: translate(var(--scatter-x1), var(--scatter-y1));
+  }
+  49% {
+    transform: translate(var(--scatter-x2), var(--scatter-y2));
+  }
+  58% {
+    transform: translate(var(--scatter-x3), var(--scatter-y3));
+  }
+  67% {
+    transform: translate(var(--scatter-x4), var(--scatter-y4));
+  }
+  75%,
+  100% {
+    transform: translate(0, 0);
   }
 }
 
