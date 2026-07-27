@@ -1,21 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Sans_JP, Plus_Jakarta_Sans } from "next/font/google";
+import "@fontsource-variable/noto-sans-jp";
+import "@fontsource-variable/plus-jakarta-sans";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const notoSansJP = Noto_Sans_JP({
-  subsets: ["latin"],
-  variable: "--font-jp",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mederiqa.com"),
   title: {
     default: "Mederiqa — Healthcare Intelligence",
     template: "%s | Mederiqa",
@@ -60,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${jakarta.variable} ${notoSansJP.variable}`}>
+    <html lang="ja">
       <body>{children}</body>
     </html>
   );

@@ -7,8 +7,8 @@
   --mint: #63e0b8;
   --mint-bright: #8cf3d0;
   --night: #0b1916;
-  --display: var(--font-display), "Helvetica Neue", sans-serif;
-  --jp: var(--font-jp), "Hiragino Kaku Gothic ProN", sans-serif;
+  --display: "Plus Jakarta Sans Variable", "Helvetica Neue", sans-serif;
+  --jp: "Noto Sans JP Variable", "Hiragino Kaku Gothic ProN", sans-serif;
 }
 
 * {
