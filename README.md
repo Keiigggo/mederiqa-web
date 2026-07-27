@@ -1,6 +1,6 @@
-# Mederiqa
+# Medenoa
 
-Mederiqa の会社概要・サービス紹介サイトです。
+Medenoa の会社概要・サービス紹介サイトです。
 
 ## Development
 
