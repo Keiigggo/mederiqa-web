@@ -252,22 +252,6 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="about-mission">
-          <div className="about-mission-mark" aria-hidden="true">
-            <BrandSymbol />
-          </div>
-          <div className="about-mission-copy">
-            <p className="about-mission-kicker">Our mission</p>
-            <h2>
-              Technology shaped
-              <br />
-              around <em>care.</em>
-            </h2>
-            <p className="about-mission-note">
-              人とテクノロジーの間に、信頼できる選択肢をつくる。
-            </p>
-          </div>
-        </div>
       </section>
 
       <div className="about-signature" aria-hidden="true">
