@@ -298,10 +298,12 @@ export default function Home() {
         <div className="contact-top">
           <span className="section-number">03</span>
           <span>Contact</span>
-          <span className="section-jp">お問い合わせ</span>
         </div>
         <div className="contact-main">
-          <p>お問い合わせは、下記メールアドレスまで。</p>
+          <div className="contact-copy">
+            <h2>お問い合わせ</h2>
+            <p>事業・共同開発に関するご相談は、<br />メールにて承ります。</p>
+          </div>
           <a href="mailto:contact@medenoa.jp">
             <span>contact@medenoa.jp</span>
             <span className="contact-arrow">

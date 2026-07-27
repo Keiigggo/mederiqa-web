@@ -872,9 +872,9 @@ main {
 
 .contact-top {
   display: grid;
-  grid-template-columns: 70px 1fr auto;
-  align-items: baseline;
-  padding-bottom: 24px;
+  grid-template-columns: 70px 1fr;
+  align-items: center;
+  padding-bottom: 18px;
   border-bottom: 1px solid var(--line);
   font-family: "Plus Jakarta Sans Variable", sans-serif;
   font-size: 12px;
@@ -882,30 +882,44 @@ main {
 }
 
 .contact-top > span:nth-child(2) {
-  font-size: clamp(28px, 3vw, 46px);
-  font-weight: 520;
-  letter-spacing: -0.045em;
+  font-size: 13px;
+  letter-spacing: 0.02em;
 }
 
 .contact-main {
-  padding: 105px 0 120px;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.7fr) minmax(420px, 1.3fr);
+  gap: clamp(48px, 8vw, 140px);
+  align-items: end;
+  padding: 88px 0 104px;
 }
 
-.contact-main > p {
-  margin: 0 0 36px;
+.contact-copy h2 {
+  margin: 0 0 24px;
+  font-family: "Noto Sans JP Variable", sans-serif;
+  font-size: clamp(28px, 2.8vw, 42px);
+  font-weight: 480;
+  letter-spacing: -0.055em;
+  line-height: 1.35;
+}
+
+.contact-copy p {
+  margin: 0;
   color: var(--muted);
-  font-family: "Plus Jakarta Sans Variable", sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.05em;
+  font-size: 13px;
+  letter-spacing: 0.015em;
+  line-height: 1.9;
 }
 
 .contact-main > a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--ink);
   font-family: "Plus Jakarta Sans Variable", sans-serif;
-  font-size: clamp(18px, 1.65vw, 25px);
+  font-size: clamp(20px, 2vw, 30px);
   font-weight: 430;
   letter-spacing: -0.045em;
   line-height: 1.25;
@@ -1161,8 +1175,19 @@ footer {
     padding-top: 72px;
   }
 
+  .contact-top {
+    grid-template-columns: 38px 1fr;
+  }
+
   .contact-main {
-    padding: 80px 0 95px;
+    grid-template-columns: 1fr;
+    gap: 56px;
+    padding: 64px 0 84px;
+  }
+
+  .contact-copy h2 {
+    margin-bottom: 16px;
+    font-size: 28px;
   }
 
   .contact-main > a {
