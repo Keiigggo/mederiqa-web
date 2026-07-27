@@ -677,7 +677,7 @@ main {
 
 .about-body {
   width: min(100%, 760px);
-  justify-self: end;
+  justify-self: start;
 }
 
 .about-body p {
