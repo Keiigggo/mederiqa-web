@@ -298,7 +298,7 @@ export default function Home() {
           <span className="section-jp">お問い合わせ</span>
         </div>
         <div className="contact-main">
-          <p>Let&apos;s expand the possibilities of healthcare.</p>
+          <p>医療のこれからを、ともにつくる。</p>
           <a href="mailto:contact@medenoa.jp">
             <span>contact@medenoa.jp</span>
             <span className="contact-arrow">
