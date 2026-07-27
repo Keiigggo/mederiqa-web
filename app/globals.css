@@ -859,9 +859,9 @@ main {
   justify-content: space-between;
   border-bottom: 1px solid var(--ink);
   font-family: "Plus Jakarta Sans Variable", sans-serif;
-  font-size: clamp(28px, 4.5vw, 68px);
+  font-size: clamp(24px, 3vw, 46px);
   font-weight: 430;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.045em;
   line-height: 1.25;
   transition: color 200ms ease;
 }
@@ -872,7 +872,7 @@ main {
 
 .contact-arrow {
   display: grid;
-  width: clamp(48px, 4.5vw, 68px);
+  width: clamp(42px, 3.5vw, 54px);
   aspect-ratio: 1;
   flex: 0 0 auto;
   place-items: center;
@@ -1143,11 +1143,11 @@ footer {
 
   .contact-main > a {
     gap: 14px;
-    font-size: clamp(23px, 6.5vw, 34px);
+    font-size: clamp(20px, 5.5vw, 28px);
   }
 
   .contact-arrow {
-    width: 45px;
+    width: 40px;
   }
 
   footer {
