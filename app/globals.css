@@ -767,8 +767,11 @@ main {
   align-items: center;
   justify-content: center;
   gap: clamp(28px, 5vw, 76px);
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0 var(--page-pad);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
 }
 
 .about-signature svg {

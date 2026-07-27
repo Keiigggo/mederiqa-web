@@ -268,13 +268,14 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="about-signature" aria-hidden="true">
-          <BrandSymbol />
-          <p>
-            Human <i>×</i> Intelligence <i>×</i> Healthcare
-          </p>
-        </div>
       </section>
+
+      <div className="about-signature" aria-hidden="true">
+        <BrandSymbol />
+        <p>
+          Human <i>×</i> Intelligence <i>×</i> Healthcare
+        </p>
+      </div>
 
       <section className="services section" id="services">
         <div className="section-heading">
