@@ -215,6 +215,11 @@ main {
   white-space: nowrap;
 }
 
+.hero h1 .hero-no-break {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .hero-description {
   margin: 31px 0 0;
   color: var(--muted);

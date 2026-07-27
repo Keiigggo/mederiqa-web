@@ -206,7 +206,9 @@ export default function Home() {
           </p>
           <h1>
             <span>人とAI・テクノロジーをつなぎ、</span>
-            <span>医療の可能性を無限に拡張する。</span>
+            <span>
+              医療の可能性を<span className="hero-no-break">ひろげます。</span>
+            </span>
           </h1>
           <p className="hero-description">
             Medenoaは、テクノロジーの力で医療の未来を切り拓き、
@@ -249,6 +251,10 @@ export default function Home() {
             <p>
               現在は病床管理・退院支援・業務最適化を中心に、
               現場の知とテクノロジーをつなぐプロダクトを開発しています。
+            </p>
+            <p>
+              共同開発や提携を通じて共有される技術・情報について、
+              機密性を尊重し、厳格な管理のもとで取り扱います。
             </p>
           </div>
         </div>
