@@ -692,8 +692,12 @@ main {
 }
 
 .about-body p + p {
-  margin-top: 28px;
+  margin-top: 22px;
   color: #a9aaab;
+}
+
+.about-body p:last-child {
+  margin-top: 50px;
 }
 
 .about-signature {
@@ -1085,6 +1089,14 @@ footer {
 
   .about-body p {
     font-size: 13px;
+  }
+
+  .about-body p + p {
+    margin-top: 18px;
+  }
+
+  .about-body p:last-child {
+    margin-top: 36px;
   }
 
   .about-signature {
