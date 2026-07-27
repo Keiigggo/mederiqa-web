@@ -54,25 +54,24 @@ const medenoaCorePath =
 function LogoGeometry({ animated = false }: { animated?: boolean }) {
   return (
     <>
-      {["outer", "mid", "micro"].map((orbit) => (
-        <g key={orbit}>
-          {medenoaDots
-            .filter((dot) => dot.orbit === orbit)
-            .map((dot, dotIndex) => (
-              <circle
-                className={
-                  animated
-                    ? `hero-logo-dot hero-logo-dot--${dotIndex % 2 === 0 ? "clockwise" : "counterclockwise"}`
-                    : undefined
-                }
-                cx={dot.cx}
-                cy={dot.cy}
-                r={dot.r}
-                key={`${dot.cx}-${dot.cy}`}
-              />
-            ))}
-        </g>
-      ))}
+      {medenoaDots.map((dot, dotIndex) => {
+        const pairIndex = Math.floor(dotIndex / 2);
+        const isClockwise = (pairIndex + (dotIndex % 2)) % 2 === 0;
+
+        return (
+          <circle
+            className={
+              animated
+                ? `hero-logo-dot hero-logo-dot--${isClockwise ? "clockwise" : "counterclockwise"} hero-logo-dot--motion-${dotIndex % 4}`
+                : undefined
+            }
+            cx={dot.cx}
+            cy={dot.cy}
+            r={dot.r}
+            key={`${dot.cx}-${dot.cy}`}
+          />
+        );
+      })}
       <path d={medenoaCorePath} />
     </>
   );
@@ -221,29 +220,29 @@ export default function Home() {
             </p>
           </div>
         </div>
+        <div className="about-mission">
+          <div className="about-mission-mark" aria-hidden="true">
+            <BrandSymbol />
+          </div>
+          <div className="about-mission-copy">
+            <p className="about-mission-kicker">Our mission</p>
+            <h2>
+              Technology shaped
+              <br />
+              around <em>care.</em>
+            </h2>
+            <p className="about-mission-translation">
+              医療を起点に、技術をかたちづくる。
+            </p>
+            <p className="about-mission-note">
+              人とテクノロジーの間に、信頼できる選択肢をつくる。
+            </p>
+          </div>
+        </div>
         <div className="about-signature" aria-hidden="true">
           <BrandSymbol />
           <p>
             Human <i>×</i> Intelligence <i>×</i> Healthcare
-          </p>
-        </div>
-      </section>
-
-      <section className="manifesto" aria-label="Medenoa mission">
-        <div className="manifesto-mark" aria-hidden="true">
-          <BrandSymbol />
-        </div>
-        <div>
-          <p className="manifesto-kicker">Our mission</p>
-          <h2>
-            Technology shaped
-            <br />
-            around <em>care.</em>
-          </h2>
-          <p className="manifesto-jp">
-            技術からではなく、医療の課題から。
-            <br />
-            人とテクノロジーの間に、信頼できる選択肢をつくる。
           </p>
         </div>
       </section>
