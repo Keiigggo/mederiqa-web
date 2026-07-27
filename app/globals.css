@@ -834,11 +834,18 @@ main {
 .contact-top {
   display: grid;
   grid-template-columns: 70px 1fr auto;
+  align-items: baseline;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--line);
   font-family: "Plus Jakarta Sans Variable", sans-serif;
   font-size: 12px;
   font-weight: 600;
+}
+
+.contact-top > span:nth-child(2) {
+  font-size: clamp(28px, 3vw, 46px);
+  font-weight: 520;
+  letter-spacing: -0.045em;
 }
 
 .contact-main {
@@ -859,7 +866,7 @@ main {
   justify-content: space-between;
   border-bottom: 1px solid var(--ink);
   font-family: "Plus Jakarta Sans Variable", sans-serif;
-  font-size: clamp(24px, 3vw, 46px);
+  font-size: clamp(18px, 1.65vw, 25px);
   font-weight: 430;
   letter-spacing: -0.045em;
   line-height: 1.25;
@@ -872,7 +879,7 @@ main {
 
 .contact-arrow {
   display: grid;
-  width: clamp(42px, 3.5vw, 54px);
+  width: clamp(38px, 3vw, 46px);
   aspect-ratio: 1;
   flex: 0 0 auto;
   place-items: center;
@@ -1143,11 +1150,11 @@ footer {
 
   .contact-main > a {
     gap: 14px;
-    font-size: clamp(20px, 5.5vw, 28px);
+    font-size: clamp(18px, 4.8vw, 22px);
   }
 
   .contact-arrow {
-    width: 40px;
+    width: 38px;
   }
 
   footer {
