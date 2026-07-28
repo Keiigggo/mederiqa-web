@@ -300,6 +300,7 @@ main {
   background: var(--ink);
   box-shadow: 0 0 0 7px rgba(8, 8, 8, 0.04);
   content: "";
+  transform: translate(-50%, -50%);
 }
 
 .hero-orbit--outer {
@@ -309,11 +310,11 @@ main {
 
 .hero-orbit--outer::before {
   top: 17%;
-  left: 12%;
+  left: 12.44%;
 }
 
 .hero-orbit--outer::after {
-  right: 8%;
+  right: 7.28%;
   bottom: 24%;
 }
 
@@ -324,13 +325,13 @@ main {
 }
 
 .hero-orbit--inner::before {
-  top: 49%;
-  left: -4px;
+  top: 50%;
+  left: 0;
 }
 
 .hero-orbit--inner::after {
   top: 10%;
-  right: 16%;
+  right: 20%;
 }
 
 @keyframes orbit-spin {
