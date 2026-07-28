@@ -208,9 +208,13 @@ export default function Home() {
             Healthcare Intelligence
           </p>
           <h1>
-            <span>人とAI・テクノロジーをつなぎ、</span>
-            <span>
-              医療の可能性を<span className="hero-no-break">ひろげます。</span>
+            <span className="hero-line">
+              <span className="hero-phrase">人とAI・テクノロジーを</span>
+              <span className="hero-phrase">つなぎ、</span>
+            </span>
+            <span className="hero-line">
+              <span className="hero-phrase">医療の可能性を</span>
+              <span className="hero-phrase">ひろげます。</span>
             </span>
           </h1>
           <p className="hero-description">
@@ -244,7 +248,8 @@ export default function Home() {
         </div>
         <div className="about-layout">
           <p className="about-lead">
-            <span>医療を起点に、技術をつくる。</span>
+            <span className="about-phrase">医療を起点に、</span>
+            <span className="about-phrase">技術をつくる。</span>
           </p>
           <div className="about-body">
             <p>
