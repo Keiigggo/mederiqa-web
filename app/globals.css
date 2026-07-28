@@ -314,8 +314,8 @@ main {
 }
 
 .hero-orbit--outer::after {
-  right: 7.28%;
-  bottom: 24%;
+  top: 76%;
+  left: 92.72%;
 }
 
 .hero-orbit--inner {
@@ -331,7 +331,7 @@ main {
 
 .hero-orbit--inner::after {
   top: 10%;
-  right: 20%;
+  left: 80%;
 }
 
 @keyframes orbit-spin {
