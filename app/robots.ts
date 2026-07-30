@@ -7,6 +7,5 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
     sitemap: "https://medenoa.jp/sitemap.xml",
-    host: "https://medenoa.jp",
   };
 }
