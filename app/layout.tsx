@@ -49,6 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ja_JP",
+    url: "/",
     siteName: "メデノア | Medenoa",
     title: "メデノア | Medenoa — Healthcare Intelligence",
     description: "人とAI・テクノロジーをつなぎ、医療の可能性をひろげます。",
